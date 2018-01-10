@@ -1,3 +1,7 @@
+// ## React-scroll customised to have offsetScroll argument
+// ## By: Syn-Ee Wong - synee.wong@ie.com.au
+// ## Reference: https://github.com/fisshy/react-scroll/commit/ebcdd4b4caf5732e4f4d4e7dacd0cfcff658cfab
+
 "use strict";
 
 /* DEPRECATED */
@@ -19,6 +23,7 @@ const protoTypes = {
   spy: PropTypes.bool,
   smooth: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   offset: PropTypes.number,
+  scrollOffset: PropTypes.number, // Customised section
   delay: PropTypes.number,
   isDynamic: PropTypes.bool,
   onClick: PropTypes.func,
@@ -217,7 +222,7 @@ const Helpers = {
 
     Scroll.propTypes = protoTypes;
 
-    Scroll.defaultProps = { offset: 0 };
+    Scroll.defaultProps = { offset: 0, scrollOffset: 0 }; // Customised section
 
     return Scroll;
   },

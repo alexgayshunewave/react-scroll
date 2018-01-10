@@ -1,3 +1,7 @@
+// ## React-scroll customised to have offsetScroll argument
+// ## By: Syn-Ee Wong - synee.wong@ie.com.au
+// ## Reference: https://github.com/fisshy/react-scroll/commit/ebcdd4b4caf5732e4f4d4e7dacd0cfcff658cfab
+
 import utils  from './utils';
 import animateScroll from './animate-scroll';
 import events from'./scroll-events';
@@ -54,7 +58,7 @@ export default {
 
       props.absolute = true;
 
-      let scrollOffset = utils.scrollOffset(containerElement, target) + (props.offset || 0);
+      let scrollOffset = utils.scrollOffset(containerElement, target) + (props.offset || 0) + (props.scrollOffset || 0); // Extended to receive scrollOffset
 
       /*
        * if animate is not provided just scroll into the view
